@@ -62,6 +62,17 @@ If you'd like to include a service based on some conditional, you can use the `s
 <x-services::intercom show={Auth::check()} />
 ```
 
+### Environments
+
+Since it's common to only include certain scripts in production environments, you can define an `environments` key in your config file that will automatically cause the service to be included if the current environment matches one in the array:
+
+```
+'intercom' => [
+    'app_id' => env('INTERCOM_APP_ID'),
+    'environments' => ['production', 'staging'],
+],
+```
+
 ## Supported Services
 
 Service | Component | Configurations

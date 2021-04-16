@@ -9,7 +9,7 @@ class Segment extends BaseComponent implements FrontendServiceInterface
 {
     public $writeKey;
     
-    public function __construct($authOnly = false)
+    public function __construct()
     {
         parent::__construct();
         
