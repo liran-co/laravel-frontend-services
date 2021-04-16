@@ -2,9 +2,10 @@
 
 namespace LiranCo\FrontendServices\View\Components;
 
+use LiranCo\FrontendServices\Interfaces\FrontendServiceInterface;
 use LiranCo\FrontendServices\View\BaseComponent;
 
-class Fullstory extends BaseComponent
+class Fullstory extends BaseComponent implements FrontendServiceInterface
 {
     public $orgId;
     
@@ -12,13 +13,15 @@ class Fullstory extends BaseComponent
     
     public function __construct()
     {
+        parent::__construct();
+        
         $this->orgId = config('services.fullstory.org_id');
         
         $this->debug = config('services.fullstory.debug', false);
     }
     
-    public function render()
+    public function getServiceName() : string
     {
-        return view('services::components.fullstory');
+        return 'fullstory';
     }
 }

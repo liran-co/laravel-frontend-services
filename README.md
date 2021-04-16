@@ -56,13 +56,13 @@ Next,
 
 Service | Component | Configurations
 --- | --- | ---
-[Facebook](https://facebook.com) | `<x-services::facebook />` | `org_id` `debug`
+[Facebook](https://facebook.com) | `<x-services::facebook />` | `app_id`
 [Fullstory](https://fullstory.com) | `<x-services::fullstory />` | `org_id` `debug`
-[Google Analytics](http://analytics.google.com) | `<x-services::googleanalytics />` | `org_id` `debug`
-[Heap](https://heap.io) | `<x-services::heap />` | `org_id` `debug`
-[Intercom](https://intercom.com) | `<x-services::intercom />` | `org_id` `debug`
-[Segment](https://segment.com) | `<x-services::segment />` | `org_id` `debug`
-[Sentry](https://sentry.com) | `<x-services::sentry />` | `org_id` `debug`
+[Google Analytics](http://analytics.google.com) | `<x-services::googleanalytics />` | `property_id`
+[Heap](https://heap.io) | `<x-services::heap />` | `app_id`
+[Intercom](https://intercom.com) | `<x-services::intercom />` | `app_id`
+[Segment](https://segment.com) | `<x-services::segment />` | `write_key`
+[Sentry](https://sentry.com) | `<x-services::sentry />` | `dsn` `environment` `debug`
 
 ## License
 Released under the [MIT](https://choosealicense.com/licenses/mit/) license. See [LICENSE](LICENSE.md) for more information.

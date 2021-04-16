@@ -2,9 +2,10 @@
 
 namespace LiranCo\FrontendServices\View\Components;
 
+use LiranCo\FrontendServices\Interfaces\FrontendServiceInterface;
 use LiranCo\FrontendServices\View\BaseComponent;
 
-class Sentry extends BaseComponent
+class Sentry extends BaseComponent implements FrontendServiceInterface
 {
     public $dsn;
     
@@ -14,6 +15,8 @@ class Sentry extends BaseComponent
     
     public function __construct()
     {
+        parent::__construct();
+        
         $this->dsn = config('services.sentry.dsn');
         
         $this->environment = config('services.sentry.environment', 'production');
@@ -21,8 +24,8 @@ class Sentry extends BaseComponent
         $this->debug = config('services.sentry.debug', false);
     }
 
-    public function render()
+    public function getServiceName() : string
     {
-        return view('services::components.sentry');
+        return 'sentry';
     }
 }
