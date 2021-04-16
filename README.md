@@ -68,13 +68,13 @@ Since it's common to only include certain scripts in production environments, yo
 
 Service | Component | Configurations
 --- | --- | ---
-[Facebook](https://facebook.com) | `<x-services::facebook />` | `app_id`
+[Facebook](https://developers.facebook.com/docs/javascript/) | `<x-services::facebook />` | `app_id`
 [Fullstory](https://fullstory.com) | `<x-services::fullstory />` | `org_id` `debug`
 [Google Analytics](http://analytics.google.com) | `<x-services::googleanalytics />` | `property_id`
 [Heap](https://heap.io) | `<x-services::heap />` | `app_id`
 [Intercom](https://intercom.com) | `<x-services::intercom />` | `app_id`
 [Segment](https://segment.com) | `<x-services::segment />` | `write_key`
-[Sentry](https://sentry.com) | `<x-services::sentry />` | `dsn` `environment` `debug`
+[Sentry](https://sentry.io) | `<x-services::sentry />` | `dsn` `environment` `debug`
 
 ## License
 Released under the [MIT](https://choosealicense.com/licenses/mit/) license. See [LICENSE](LICENSE.md) for more information.
