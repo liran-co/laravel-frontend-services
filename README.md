@@ -14,16 +14,40 @@ composer require liran-co/laravel-frontend-services
 
 ## Usage
 
-First, add the relevant configuration values for each service you'd like to use in the `config/services.php` file. For example, 
+First, add the relevant configuration values for each service you'd like to use in the `config/services.php` file.  
+
+```
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Third Party Services
+    |--------------------------------------------------------------------------
+    |
+    | This file is for storing the credentials for third party services such
+    | as Stripe, Mailgun, SparkPost and others. This file provides a sane
+    | default location for this type of information, allowing packages
+    | to have a conventional place to find your various credentials.
+    |
+    */
+
+    'intercom' => [
+        'app_id' => env('INTERCOM_APP_ID'),
+    ],
+
+    // ...
+
+```
 
 
 You'll find a full list of supported services below with their corresponding configuration keys.
 
-Next, use Blade component syntax to include the service in your view.
+Next, use Blade component syntax to include the service in your view:
 
-For example, to add Google Analytics:
 ```bash
-<x-services::googleanalytics />
+<x-services::intercom />
 ```
 
 Typically you'll want to either do this in the `<head>` section of your site or before the closing `</body>` tag.
@@ -37,20 +61,6 @@ If you'd like to include a service based on some conditional, you can use the `s
 ```bash
 <x-services::intercom show={Auth::check()} />
 ```
-
-### Additional Options
-
-
-## Identity Objects
-
-Most services expose a method to identify a user. To do this, add the to your model and include a `getIntercomIdentityObject()` function on your User class. 
-
-```
-
-```
-
-Next, 
-
 
 ## Supported Services
 
