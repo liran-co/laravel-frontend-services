@@ -2,25 +2,17 @@
 
 namespace LiranCo\FrontendServices\View\Components;
 
-use Illuminate\View\Component;
+use LiranCo\FrontendServices\View\BaseComponent;
 
-class Heap extends Component
+class Heap extends BaseComponent
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    public $appId;
+    
     public function __construct()
     {
-        //
+        $this->appId = config('services.heap.app_id');
     }
-
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
+    
     public function render()
     {
         return view('services::components.heap');

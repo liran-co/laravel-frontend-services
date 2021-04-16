@@ -2,27 +2,19 @@
 
 namespace LiranCo\FrontendServices\View\Components;
 
-use Illuminate\View\Component;
+use LiranCo\FrontendServices\View\BaseComponent;
 
-class Segment extends Component
+class Segment extends BaseComponent
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $writeKey;
+    
+    public function __construct($authOnly = false)
     {
-        //
+        $this->writeKey = config('services.segment.write_key');
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
-    public function render()
+    public function getComponentName()
     {
-        return view('services::components.segment');
+        return 'services::components.segment';
     }
 }

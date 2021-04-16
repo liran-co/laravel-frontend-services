@@ -1,1 +1,68 @@
-# laravel-services
+# Laravel Frontend Services
+
+Laravel Frontend Services exposes [Blade Components](https://laravel.com/docs/8.x/blade#components) that make it easier to integrate and include the scripts of third-party services. 
+
+[![Latest Stable Version](https://poser.pugx.org/liran-co/laravel-frontend-services/v/stable)](https://packagist.org/packages/liran-co/laravel-frontend-services) [![Total Downloads](https://poser.pugx.org/liran-co/laravel-frontend-services/downloads)](https://packagist.org/packages/liran-co/laravel-frontend-services) [![License](https://poser.pugx.org/liran-co/laravel-frontend-services/license)](https://packagist.org/packages/liran-co/laravel-frontend-services)
+
+## Installation
+
+To get started, install the `liran-co/laravel-frontend-services` package:
+
+```bash
+composer require liran-co/laravel-frontend-services
+```
+
+## Usage
+
+First, add the relevant configuration values for each service you'd like to use in the `config/services.php` file. For example, 
+
+
+You'll find a full list of supported services below with their corresponding configuration keys.
+
+Next, use Blade component syntax to include the service in your view.
+
+For example, to add Google Analytics:
+```bash
+<x-services::googleanalytics />
+```
+
+Typically you'll want to either do this in the `<head>` section of your site or before the closing `</body>` tag.
+
+## Advanced Usage
+
+### Show
+
+If you'd like to include a service based on some conditional, you can use the `show` attribute on the component. For example, to only include the Intercom service when a user is logged in, you can do this:
+
+```bash
+<x-services::intercom show={Auth::check()} />
+```
+
+### Additional Options
+
+
+## Identity Objects
+
+Most services expose a method to identify a user. To do this, add the to your model and include a `getIntercomIdentityObject()` function on your User class. 
+
+```
+
+```
+
+Next, 
+
+
+## Supported Services
+
+Service | Component | Configurations
+--- | --- | ---
+[Facebook](https://facebook.com) | `<x-services::facebook />` | `org_id` `debug`
+[Fullstory](https://fullstory.com) | `<x-services::fullstory />` | `org_id` `debug`
+[Google Analytics](http://analytics.google.com) | `<x-services::googleanalytics />` | `org_id` `debug`
+[Heap](https://heap.io) | `<x-services::heap />` | `org_id` `debug`
+[Intercom](https://intercom.com) | `<x-services::intercom />` | `org_id` `debug`
+[Segment](https://segment.com) | `<x-services::segment />` | `org_id` `debug`
+[Sentry](https://sentry.com) | `<x-services::sentry />` | `org_id` `debug`
+
+## License
+Released under the [MIT](https://choosealicense.com/licenses/mit/) license. See [LICENSE](LICENSE.md) for more information.

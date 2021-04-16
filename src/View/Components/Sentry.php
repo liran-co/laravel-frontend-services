@@ -2,25 +2,25 @@
 
 namespace LiranCo\FrontendServices\View\Components;
 
-use Illuminate\View\Component;
+use LiranCo\FrontendServices\View\BaseComponent;
 
-class Sentry extends Component
+class Sentry extends BaseComponent
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+    public $dsn;
+    
+    public $environment;
+    
+    public $debug;
+    
     public function __construct()
     {
-        //
+        $this->dsn = config('services.sentry.dsn');
+        
+        $this->environment = config('services.sentry.environment', 'production');
+        
+        $this->debug = config('services.sentry.debug', false);
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\Contracts\View\View|\Closure|string
-     */
     public function render()
     {
         return view('services::components.sentry');
