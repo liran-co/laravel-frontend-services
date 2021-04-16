@@ -1,5 +1,7 @@
 # Laravel Frontend Services
 
+> ⚠️ Warning: This is a pre-release version that is not yet ready for production use.
+
 Laravel Frontend Services exposes [Blade Components](https://laravel.com/docs/8.x/blade#components) that make it easier to integrate and include the scripts of third-party services. 
 
 [![Latest Stable Version](https://poser.pugx.org/liran-co/laravel-frontend-services/v/stable)](https://packagist.org/packages/liran-co/laravel-frontend-services) [![Total Downloads](https://poser.pugx.org/liran-co/laravel-frontend-services/downloads)](https://packagist.org/packages/liran-co/laravel-frontend-services) [![License](https://poser.pugx.org/liran-co/laravel-frontend-services/license)](https://packagist.org/packages/liran-co/laravel-frontend-services)
